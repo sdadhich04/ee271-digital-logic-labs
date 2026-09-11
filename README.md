@@ -1,24 +1,28 @@
 # EE 271 Digital Logic Labs
 
-SystemVerilog portfolio archive from UW EE 271: Digital Circuits and Systems. The repository shows a progression from combinational logic through finite-state machines, clocking, button synchronization, and an LFSR-based reaction game.
+A collection of SystemVerilog lab directories for digital-logic designs. Each lab includes source for a `DE1_SoC` top-level module; the top-level port definitions use DE1-SoC board signals such as `CLOCK_50`, `KEY`, `LEDR`, `SW`, and `HEX`.
 
 ## Contents
 
-| Folder | Focus |
+| Folder | Source included |
 | --- | --- |
-| `lab1_mux/` | Two-input and four-input multiplexers with a DE1-SoC top level and testbenches. |
-| `lab2_boolean_seg7/` | Boolean logic and seven-segment display decoding. |
-| `lab3_fsm/` | FSM design with clock division and display output. |
-| `lab4_button_debounce/` | Button synchronization, metastability handling, LED control, and win-state logic. |
-| `lab5_cyberplayer_lfsr/` | Reaction-game modules using an LFSR, comparator, counter, synchronized button input, and LED control. |
-| `lab_quiz_adder_fsm/` | Continuous-adder FSM with a DE1-SoC top level and simulation testbench. |
+| `lab1_mux/` | Two-input and four-input multiplexer modules and a `DE1_SoC` top level. |
+| `lab2_boolean_seg7/` | `theft` logic, a seven-segment module, multiplexers, and a top level. |
+| `lab3_fsm/` | A `simple` finite-state machine, clock divider, seven-segment module, and a top level. |
+| `lab4_button_debounce/` | Metastability, button-detection, LED-control, and win-state modules with a top level. |
+| `lab5_cyberplayer_lfsr/` | LFSR, comparator, counter, button, LED-control, win-state, and `CyberPlayer` modules with a top level. |
+| `lab_quiz_adder_fsm/` | A continuous-adder FSM, clock divider, seven-segment module, and a top level. |
 
-## Notes
+## Hardware and tools
 
-- Targets the Terasic DE1-SoC board and Intel Quartus-style SystemVerilog workflow.
-- Course handouts, reports, board videos, screenshots, and generated Quartus artifacts are intentionally not bundled.
-- The `lab_quiz_adder_fsm/` source was reconstructed from an archived personal PDF record because the retained Quartus source tree contained the intentionally broken starter version. The included files are marked as post-course curation, not a claim about the original source archive state.
+- SystemVerilog (`.sv`) source.
+- The `DE1_SoC` top-level comments identify the DE1-SoC board; the clocked top levels declare a 50 MHz `CLOCK_50` input.
+- No Quartus project files, pin-assignment files, or build scripts are included.
 
-## Suggested Workflow
+## How to run
 
-Open an individual lab folder in Quartus or compile the relevant `.sv` files with your preferred SystemVerilog simulator. Each folder is kept self-contained so the examples can be reviewed independently.
+Choose one lab directory, add that directory's `.sv` files to a SystemVerilog project or simulator, and use its `DE1_SoC` module as the top level. The source also contains inline modules named `*_testbench` for simulation. Board programming requires board pin assignments, which are not included in this repository.
+
+## Credits
+
+Git history shows one contributor: Sparsh Dadhich. No second contributor appears in the repository's commit history.
